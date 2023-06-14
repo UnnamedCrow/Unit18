@@ -24,13 +24,14 @@ namespace Unit18
         // Команда для эксплуатации объекта
         public void Action()
         {
-            Client.Videos.GetAsync(Url);
+            var VideoInfo = Client.Videos.GetAsync(Url).Result;
+            Console.WriteLine($"Название видео: {VideoInfo.Title}");
+            Console.WriteLine($"Описание: {VideoInfo.Description}");
         }
 
         public CommandGetInfo(string url)
         {
             Url = url;
-            Client = new YoutubeClient();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YoutubeExplode;
 
 namespace Unit18
 {
@@ -13,5 +14,6 @@ namespace Unit18
     interface ICommand
     {       
         void Action();
+        void GetUseObject(YoutubeClient client);
     }
 }

@@ -26,15 +26,19 @@ namespace Unit18
         // Команда для эксплуатации объекта 
         public void Action()
         {            
-
             // Скачивание видео
-            Client.Videos.DownloadAsync(Url, "");
+            var _Download = Download();
         }
 
         public CommandDownload (string url)
         {
             Url = url;
-            Client = new YoutubeClient();
+        }
+        public async Task Download()
+        {
+            Console.WriteLine("Download start");
+            await Client.Videos.DownloadAsync(Url, "D:\\repos\\Unit18\\Unit18\\bin\\Debug\\net7.0");
+            Console.WriteLine("Download end");
         }
     }
 }
